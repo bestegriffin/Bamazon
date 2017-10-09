@@ -2,13 +2,9 @@ var inquirer = require("inquirer");
 var mysql = require("mysql");
 
 
+
 // MySQL connection details
 var connection = mysql.createConnection({
-    // Enable these for localhost I have to use, 
-    // socketpath on my machine or it wont work
-
-    // host: "localhost",
-    // port: 3306,
     socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
     user: 'root',
     password: 'root',
@@ -41,7 +37,7 @@ connection.query('SELECT * FROM products', function(err, res) {
 });
 
 var promptUser = function(){
-e
+
 	inquirer.prompt([{
 		name: "Item_ID",
 		message: "Enter the ID of the item you wish to purchase.",
