@@ -4,16 +4,21 @@ var mysql = require("mysql");
 
 // MySQL connection details
 var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "",
-    database: "bamazon"
+    // Enable these for localhost I have to use, 
+    // socketpath on my machine or it wont work
+    
+    // host: "localhost",
+    // port: 3306,
+    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
+    user: 'root',
+    password: 'root',
+    database: 'bamazon',
 });
 
-// Establish connection to database
-connection.connect(function(err) {
-    if (err) throw err;
+connection.connect(function(err){
+if(err){throw err;}
+console.log('connected as id' + connection.threadId)
+
 });
 
 // Perform a get query to retrieve the stores items.

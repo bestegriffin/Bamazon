@@ -1,4 +1,4 @@
-DROP DATABASE `bamazon`;
+
 
 create database bamazon;
 
@@ -11,7 +11,7 @@ CREATE TABLE `products` (
   `Price` decimal(5,2) NOT NULL,
   `Stock_Quantity` int(3) NOT NULL,
   PRIMARY KEY (`Item_ID`)
-)
+);
 
 
 INSERT INTO `bamazon`.`products` (`Item_ID`, `Product_Name`, `Department_Name`, `Price`, `Stock_Quantity`) VALUES ('1', 'Fire TV Stick', 'Multimedia', '39.99', '1000');
